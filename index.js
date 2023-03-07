@@ -5,7 +5,7 @@ const daemon = require('daemonize2').setup({
     pidfile: 'domaind.pid',
 });
 
-switch(process.argv[2]) {
+switch (process.argv[2]) {
     case 'start':
         daemon.start();
         break;
@@ -14,7 +14,7 @@ switch(process.argv[2]) {
         break;
     case 'restart':
         daemon.stop(() => {
-           daemon.start();
+            daemon.start();
         });
         break;
     case 'reload':
